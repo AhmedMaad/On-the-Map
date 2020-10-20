@@ -42,7 +42,7 @@ class ParseAPIHandler {
             }
             do{
                 let parsedData = try JSONDecoder().decode(StudentModel.self, from: data!)
-                print("Parsed student name data: " , parsedData.results)
+                //print("Parsed student name data: " , parsedData.results)
                 completion(parsedData.results, nil)
             }
             catch{

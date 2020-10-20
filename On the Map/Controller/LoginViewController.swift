@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         //TODO: To be deleted
-        let innerBody = LoginData(username: "atef.ahmed1341@gmail.com", password: "TheMeditator1!")
+        let innerBody = LoginData(username: "", password: "")
         let body = LoginRequest(udacity: innerBody)
         do{
             request.httpBody = try JSONEncoder().encode(body)
