@@ -34,7 +34,6 @@
                                 <state key="normal" title="LOG IN"/>
                                 <connections>
                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dFK-PO-3tC"/>
-                                    <segue destination="gpl-B4-2CQ" kind="presentation" identifier="TabBarController" id="OCd-b9-ZMV"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="udacity" translatesAutoresizingMaskIntoConstraints="NO" id="vKC-Vi-aoF">
@@ -180,25 +179,10 @@
             </objects>
             <point key="canvasLocation" x="-972" y="-1417"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="DCD-MN-Kc5">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="0yZ-JX-mVi" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NPg-Yb-xEU">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CVs-JR-cio" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1487" y="183"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="agr-yi-RKn">
             <objects>
-                <navigationController id="gpl-B4-2CQ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gpl-B4-2CQ" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="J3O-Tp-7ZI">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -211,15 +195,21 @@
             </objects>
             <point key="canvasLocation" x="-2762" y="-1067"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="g7S-8S-3Dx">
             <objects>
-                <tabBarController id="G72-ys-xoU" sceneMemberID="viewController">
+                <tabBarController id="G72-ys-xoU" customClass="TabBarViewController" customModule="On_the_Map" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="KKE-7g-FIx">
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="refresh" id="4CB-FV-COd"/>
-                            <barButtonItem systemItem="add" id="KaL-Oi-j6C"/>
-                        </rightBarButtonItems>
+                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="mnt-vp-PGC">
+                            <connections>
+                                <action selector="logout:" destination="G72-ys-xoU" id="lOy-Ed-pkQ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="KaL-Oi-j6C">
+                            <connections>
+                                <action selector="openInformationPostingView:" destination="G72-ys-xoU" id="6vW-9i-14E"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nFG-Nl-9A1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -227,6 +217,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <outlet property="tabBar" destination="nFG-Nl-9A1" id="yB2-Gv-gfB"/>
                         <segue destination="QtR-6R-JZt" kind="relationship" relationship="viewControllers" id="Yos-pL-D36"/>
                         <segue destination="Bge-lB-sfm" kind="relationship" relationship="viewControllers" id="V0Q-oP-j07"/>
                     </connections>

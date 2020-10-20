@@ -11,10 +11,6 @@ import Foundation
 struct UdacityResponse: Codable{
     
     let error: String
-    
-    enum CodingKeys: String, CodingKey{
-        case error
-    }
 }
 
 extension UdacityResponse: LocalizedError{

@@ -20,47 +20,8 @@ class LoginViewController: UIViewController {
         passwordTextField.text = ""
     }
     
-    
     @IBAction func login(_ sender: Any) {
-        
         UdacityAPIHandler.login(username: emailTextField.text ?? "", password: passwordTextField.text ?? "", completion: handleLoginResponse(success:error:))
-        
-        
-        /*var request = URLRequest(url: URL(string: "https://onthemap-api.udacity.com/v1/session")!)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        //TODO: To be deleted
-        let innerBody = LoginData(username: "", password: "")
-        let body = LoginRequest(udacity: innerBody)
-        do{
-            request.httpBody = try JSONEncoder().encode(body)
-        }
-        catch{
-            print("Error")
-        }
-        
-        let session = URLSession.shared
-        let task = session.dataTask(with: request) { data, response, error in
-            if error != nil {
-                print(error?.localizedDescription)
-                return
-            }
-            let range = Range(5..<data!.count)
-            let newData = data?.subdata(in: range) /* subset response data! */
-            print(String(data: newData!, encoding: .utf8)!)
-            
-            do{
-                let returnedData = try JSONDecoder().decode(LoginResponse.self, from: newData!)
-                print(returnedData.session.id)
-            }
-            catch{
-                print(error.localizedDescription)
-            }
-            
-            
-        }
-        task.resume()*/
     }
     
     @IBAction func signup(_ sender: Any) {
@@ -71,19 +32,17 @@ class LoginViewController: UIViewController {
     
     func handleLoginResponse(success: Bool, error: Error?){
         if success {
-            //make ur segue
             print("Login success...")
             DispatchQueue.main.async {
-                self.performSegue(withIdentifier: "TabBarController", sender: nil)
+                let navVC = self.storyboard?.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
+                self.present(navVC, animated:true, completion:nil)
             }
-            
         }
         else{
             print("Login Failure...")
             DispatchQueue.main.async {
                self.showLoginFailure(message: error?.localizedDescription ?? "")
             }
-            
         }
     }
     

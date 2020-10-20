@@ -14,7 +14,8 @@
 		8D0EC661253F1A3600D097E8 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0EC660253F1A3600D097E8 /* MapViewController.swift */; };
 		8D0EC663253F1A4D00D097E8 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0EC662253F1A4D00D097E8 /* TableViewController.swift */; };
 		8D0EC665253F265400D097E8 /* ParseAPIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0EC664253F265400D097E8 /* ParseAPIHandler.swift */; };
-		8D0EC667253F298000D097E8 /* StudentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0EC666253F298000D097E8 /* StudentModel.swift */; };
+		8D0EC667253F298000D097E8 /* StudentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0EC666253F298000D097E8 /* StudentInformation.swift */; };
+		8D3A565A253F794500485689 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3A5659253F794500485689 /* TabBarViewController.swift */; };
 		8D8F5EB6253DAC100026B3F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8F5EB5253DAC100026B3F6 /* AppDelegate.swift */; };
 		8D8F5EB8253DAC100026B3F6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8F5EB7253DAC100026B3F6 /* LoginViewController.swift */; };
 		8D8F5EBB253DAC100026B3F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D8F5EB9253DAC100026B3F6 /* Main.storyboard */; };
@@ -30,7 +31,8 @@
 		8D0EC660253F1A3600D097E8 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8D0EC662253F1A4D00D097E8 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		8D0EC664253F265400D097E8 /* ParseAPIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseAPIHandler.swift; sourceTree = "<group>"; };
-		8D0EC666253F298000D097E8 /* StudentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentModel.swift; sourceTree = "<group>"; };
+		8D0EC666253F298000D097E8 /* StudentInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInformation.swift; sourceTree = "<group>"; };
+		8D3A5659253F794500485689 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		8D8F5EB2253DAC100026B3F6 /* On the Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On the Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D8F5EB5253DAC100026B3F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D8F5EB7253DAC100026B3F6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				8D8F5EB7253DAC100026B3F6 /* LoginViewController.swift */,
 				8D0EC660253F1A3600D097E8 /* MapViewController.swift */,
 				8D0EC662253F1A4D00D097E8 /* TableViewController.swift */,
+				8D3A5659253F794500485689 /* TabBarViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -101,7 +104,7 @@
 		8D0EC669253F2A9D00D097E8 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				8D0EC666253F298000D097E8 /* StudentModel.swift */,
+				8D0EC666253F298000D097E8 /* StudentInformation.swift */,
 				8D0EC664253F265400D097E8 /* ParseAPIHandler.swift */,
 			);
 			path = Map;
@@ -209,8 +212,9 @@
 			files = (
 				8D0EC65D253EF35C00D097E8 /* UdacityAPIHandler.swift in Sources */,
 				8D0EC659253EE8E900D097E8 /* LoginRequest.swift in Sources */,
+				8D3A565A253F794500485689 /* TabBarViewController.swift in Sources */,
 				8D8F5EB8253DAC100026B3F6 /* LoginViewController.swift in Sources */,
-				8D0EC667253F298000D097E8 /* StudentModel.swift in Sources */,
+				8D0EC667253F298000D097E8 /* StudentInformation.swift in Sources */,
 				8D0EC663253F1A4D00D097E8 /* TableViewController.swift in Sources */,
 				8D0EC65B253EEDBD00D097E8 /* LoginResponse.swift in Sources */,
 				8D0EC665253F265400D097E8 /* ParseAPIHandler.swift in Sources */,

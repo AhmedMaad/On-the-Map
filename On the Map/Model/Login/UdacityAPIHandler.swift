@@ -16,12 +16,16 @@ class UdacityAPIHandler {
     
     enum Endpoints {
         static let base = "https://onthemap-api.udacity.com/v1/session"
-
+        
         case login
+        case logout
         
         var stringValue: String {
             switch self {
             case .login:
+                return Endpoints.base
+                
+            case .logout:
                 return Endpoints.base
             }
         }
@@ -31,7 +35,7 @@ class UdacityAPIHandler {
         }
     }
     
-
+    
     class func login(username: String, password: String, completion: @escaping (Bool, Error?) -> Void){
         
         var request = URLRequest(url: Endpoints.login.url)
@@ -71,10 +75,29 @@ class UdacityAPIHandler {
                 print("New Error Format: ", descriptiveError.errorDescription)
                 completion(false, descriptiveError)
             }
+            
+        }
+        task.resume()
         
     }
-        task.resume()
     
-}
-
+    class func logout(completion: @escaping () -> Void){
+        var request = URLRequest(url: Endpoints.logout.url)
+        request.httpMethod = "DELETE"
+        var xsrfCookie: HTTPCookie? = nil
+        let sharedCookieStorage = HTTPCookieStorage.shared
+        for cookie in sharedCookieStorage.cookies! {
+            if cookie.name == "XSRF-TOKEN" { xsrfCookie = cookie }
+        }
+        if let xsrfCookie = xsrfCookie {
+            request.setValue(xsrfCookie.value, forHTTPHeaderField: "X-XSRF-TOKEN")
+        }
+        let session = URLSession.shared
+        let task = session.dataTask(with: request) { data, response, error in
+            Auth.sessionId = ""
+            completion()
+        }
+        task.resume()
+    }
+    
 }

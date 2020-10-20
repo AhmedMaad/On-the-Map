@@ -10,20 +10,9 @@ import Foundation
 
 struct LoginRequest: Codable{
     let udacity: LoginData
-    
-    enum CodingKeys: String, CodingKey{
-        case udacity
-    }
-    
 }
 
 struct LoginData: Codable{
     let username: String
     let password: String
-    
-    enum CodingKeys: String, CodingKey {
-        case username
-        case password
-    }
-    
 }

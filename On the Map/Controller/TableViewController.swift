@@ -16,7 +16,6 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("table view controller loaded....")
         tableView.delegate = self
         tableView.dataSource = self
         ParseAPIHandler.getStudentLocation(completion: handleGetStudentData(studentsData:error:))
@@ -25,10 +24,8 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     func handleGetStudentData(studentsData: [StudentData], error: Error?){
         if studentsData.count > 0{
             print("Student data request is successful from table view")
-            //showDataInTable(studentsData)
             DispatchQueue.main.async {
                 self.numberOfStudents = studentsData.count
-                print("students no: ", self.numberOfStudents)
                 self.retrievedStudentsData = studentsData
                 self.tableView.reloadData()
             }

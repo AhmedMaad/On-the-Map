@@ -11,19 +11,9 @@ import Foundation
 struct LoginResponse: Codable{
     
     let session: Session
-    
-    enum CodingKeys: CodingKey{
-        case session
-    }
-    
 }
 
 
 struct Session: Codable{
     let id: String
-    
-    enum CodingKeys: CodingKey{
-        case id
-    }
-    
 }

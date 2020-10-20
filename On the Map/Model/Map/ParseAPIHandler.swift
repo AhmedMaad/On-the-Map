@@ -41,16 +41,13 @@ class ParseAPIHandler {
                 return
             }
             do{
-                let parsedData = try JSONDecoder().decode(StudentModel.self, from: data!)
-                //print("Parsed student name data: " , parsedData.results)
+                let parsedData = try JSONDecoder().decode(StudentInformation.self, from: data!)
                 completion(parsedData.results, nil)
             }
             catch{
                print("Error after data returned in catch block")
                 completion([], error)
             }
-            
-            //print(String(data: data!, encoding: .utf8)!)
         }
         task.resume()
         
