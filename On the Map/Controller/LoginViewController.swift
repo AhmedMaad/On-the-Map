@@ -73,6 +73,10 @@ class LoginViewController: UIViewController {
         if success {
             //make ur segue
             print("Login success...")
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "TabBarController", sender: nil)
+            }
+            
         }
         else{
             print("Login Failure...")
