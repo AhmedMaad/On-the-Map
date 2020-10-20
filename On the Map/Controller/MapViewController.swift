@@ -18,6 +18,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         print("map view controller loaded....")
         // Do any additional setup after loading the view.
+        mapView.delegate = self
         ParseAPIHandler.getStudentLocation(completion: handleGetStudentData(studentsData:error:))
     }
     
@@ -92,8 +93,12 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if control == view.rightCalloutAccessoryView {
             let app = UIApplication.shared
+            print("url to open: ", view.annotation?.subtitle)
+           // if let toOpen = view.annotation?.subtitle! {
+            //    app.openURL(URL(string: toOpen)!)
+           // }
             if let toOpen = view.annotation?.subtitle! {
-                app.openURL(URL(string: toOpen)!)
+                app.open(URL(string: toOpen)!)
             }
         }
     }
