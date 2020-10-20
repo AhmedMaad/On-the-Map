@@ -115,13 +115,27 @@
                     <view key="view" contentMode="scaleToFill" id="4iG-UE-Ii1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CIP-nl-QXf">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CIP-nl-QXf" firstAttribute="leading" secondItem="Z9g-fw-X7V" secondAttribute="leading" id="Stv-Ym-0ye"/>
+                            <constraint firstItem="CIP-nl-QXf" firstAttribute="bottom" secondItem="Z9g-fw-X7V" secondAttribute="bottom" id="TAs-GA-DIq"/>
+                            <constraint firstItem="CIP-nl-QXf" firstAttribute="trailing" secondItem="Z9g-fw-X7V" secondAttribute="trailing" id="sVl-tI-bER"/>
+                            <constraint firstItem="CIP-nl-QXf" firstAttribute="top" secondItem="Z9g-fw-X7V" secondAttribute="top" id="w4b-P0-dUA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Z9g-fw-X7V"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" id="vSL-64-XZg"/>
+                    <connections>
+                        <outlet property="mapView" destination="CIP-nl-QXf" id="npE-NM-vVf"/>
+                    </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1737" y="-413"/>
+            <point key="canvasLocation" x="1736.8" y="-413.3433283358321"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="mGo-Fj-iQe">

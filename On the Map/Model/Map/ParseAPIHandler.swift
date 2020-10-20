@@ -20,7 +20,6 @@ class ParseAPIHandler {
                 
             case .studentLocation:
                 return Endpoints.base + "?limit=100&order=-updatedAt"
-            
                 
             }
         }
@@ -31,19 +30,27 @@ class ParseAPIHandler {
     }
     
     
-    class func login(username: String, password: String, completion: @escaping (Bool, Error?) -> Void){
+    class func getStudentLocation(completion: @escaping ([StudentData], Error?) -> Void){
         
-        var request = URLRequest(url: Endpoints.studentLocation.url)
+        let request = URLRequest(url: Endpoints.studentLocation.url)
         let session = URLSession.shared
         let task = session.dataTask(with: request) { data, response, error in
             if error != nil {
                 print("Error getting students")
-                completion(false, error)
+                completion([], error)
                 return
             }
+            do{
+                let parsedData = try JSONDecoder().decode(StudentModel.self, from: data!)
+                print("Parsed student name data: " , parsedData.results)
+                completion(parsedData.results, nil)
+            }
+            catch{
+               print("Error after data returned in catch block")
+                completion([], error)
+            }
             
-            
-            print(String(data: data!, encoding: .utf8)!)
+            //print(String(data: data!, encoding: .utf8)!)
         }
         task.resume()
         

@@ -22,13 +22,16 @@ struct StudentModel: Codable {
 struct StudentData: Codable {
     let firstName: String
     let lastName: String
+    let latitude: Double
+    let longitude: Double
     let mapString: String
     let mediaURL: String
-    
     
     enum CodingKeys: String, CodingKey {
         case firstName
         case lastName
+        case latitude
+        case longitude
         case mapString
         case mediaURL
     }
