@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Eon-op-edZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -148,6 +148,58 @@
             </objects>
             <point key="canvasLocation" x="-972" y="-599"/>
         </scene>
+        <!--Add Location View Controller-->
+        <scene sceneID="6uj-AP-83Y">
+            <objects>
+                <viewController id="Eon-op-edZ" customClass="AddLocationViewController" customModule="On_the_Map" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LNn-2q-6zy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Link of Favorites" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t2a-U8-0lp">
+                                <rect key="frame" x="44" y="267" width="291" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Location (e.g. Giza, Egypt.)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OHi-jx-mhx">
+                                <rect key="frame" x="44" y="211" width="291" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pb1-zX-QU6">
+                                <rect key="frame" x="132" y="334" width="111" height="30"/>
+                                <state key="normal" title="FIND LOCATION"/>
+                                <connections>
+                                    <action selector="findLocation:" destination="Eon-op-edZ" eventType="touchUpInside" id="4d8-m1-LQU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XLO-g9-dbW" firstAttribute="trailing" secondItem="pb1-zX-QU6" secondAttribute="trailing" constant="132" id="C4B-m4-syy"/>
+                            <constraint firstItem="t2a-U8-0lp" firstAttribute="leading" secondItem="XLO-g9-dbW" secondAttribute="leading" constant="44" id="Cf5-6k-Ay9"/>
+                            <constraint firstItem="OHi-jx-mhx" firstAttribute="top" secondItem="XLO-g9-dbW" secondAttribute="top" constant="147" id="IGe-cT-kCx"/>
+                            <constraint firstItem="t2a-U8-0lp" firstAttribute="top" secondItem="OHi-jx-mhx" secondAttribute="bottom" constant="26" id="VOm-t3-0rY"/>
+                            <constraint firstItem="pb1-zX-QU6" firstAttribute="top" secondItem="t2a-U8-0lp" secondAttribute="bottom" constant="37" id="Wrw-ac-07d"/>
+                            <constraint firstItem="XLO-g9-dbW" firstAttribute="trailing" secondItem="OHi-jx-mhx" secondAttribute="trailing" constant="40" id="ZXT-1J-jPC"/>
+                            <constraint firstItem="OHi-jx-mhx" firstAttribute="leading" secondItem="XLO-g9-dbW" secondAttribute="leading" constant="44" id="hQA-KZ-g53"/>
+                            <constraint firstItem="pb1-zX-QU6" firstAttribute="leading" secondItem="XLO-g9-dbW" secondAttribute="leading" constant="132" id="hqb-jZ-cEk"/>
+                            <constraint firstItem="XLO-g9-dbW" firstAttribute="trailing" secondItem="t2a-U8-0lp" secondAttribute="trailing" constant="40" id="pEK-Zj-nrv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XLO-g9-dbW"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Jkh-dw-m5v"/>
+                    <connections>
+                        <outlet property="linkTextField" destination="t2a-U8-0lp" id="xQz-N0-yDb"/>
+                        <outlet property="locationTextField" destination="OHi-jx-mhx" id="f5A-Qx-Uos"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rmh-s6-Gxh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1743" y="-2031"/>
+        </scene>
         <!--Map-->
         <scene sceneID="Wsv-ps-oOm">
             <objects>
@@ -207,7 +259,8 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="KaL-Oi-j6C">
                             <connections>
-                                <action selector="openInformationPostingView:" destination="G72-ys-xoU" id="6vW-9i-14E"/>
+                                <action selector="openAddLocation:" destination="G72-ys-xoU" id="QIx-PI-7ge"/>
+                                <segue destination="Eon-op-edZ" kind="show" id="5Cf-aI-2F9"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

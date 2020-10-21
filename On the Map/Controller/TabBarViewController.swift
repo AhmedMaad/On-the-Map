@@ -15,10 +15,6 @@ class TabBarViewController: UITabBarController{
         super.viewDidLoad()
     }
     
-    @IBAction func openInformationPostingView(_ sender: Any) {
-        //To be implemented
-    }
-    
     @IBAction func logout(_ sender: Any) {
         print("Should log out")
         UdacityAPIHandler.logout {

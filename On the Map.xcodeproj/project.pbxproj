@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D0946C62540507D003CA55A /* AddLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0946C52540507D003CA55A /* AddLocationViewController.swift */; };
 		8D0EC659253EE8E900D097E8 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0EC658253EE8E900D097E8 /* LoginRequest.swift */; };
 		8D0EC65B253EEDBD00D097E8 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0EC65A253EEDBD00D097E8 /* LoginResponse.swift */; };
 		8D0EC65D253EF35C00D097E8 /* UdacityAPIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0EC65C253EF35C00D097E8 /* UdacityAPIHandler.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D0946C52540507D003CA55A /* AddLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewController.swift; sourceTree = "<group>"; };
 		8D0EC658253EE8E900D097E8 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		8D0EC65A253EEDBD00D097E8 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		8D0EC65C253EF35C00D097E8 /* UdacityAPIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityAPIHandler.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				8D0EC660253F1A3600D097E8 /* MapViewController.swift */,
 				8D0EC662253F1A4D00D097E8 /* TableViewController.swift */,
 				8D3A5659253F794500485689 /* TabBarViewController.swift */,
+				8D0946C52540507D003CA55A /* AddLocationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				8D0EC667253F298000D097E8 /* StudentInformation.swift in Sources */,
 				8D0EC663253F1A4D00D097E8 /* TableViewController.swift in Sources */,
 				8D0EC65B253EEDBD00D097E8 /* LoginResponse.swift in Sources */,
+				8D0946C62540507D003CA55A /* AddLocationViewController.swift in Sources */,
 				8D0EC665253F265400D097E8 /* ParseAPIHandler.swift in Sources */,
 				8D0EC65F253EFC6F00D097E8 /* UdacityResponse.swift in Sources */,
 				8D8F5EB6253DAC100026B3F6 /* AppDelegate.swift in Sources */,
