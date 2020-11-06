@@ -14,12 +14,15 @@ class ParseAPIHandler {
         static let base = "https://onthemap-api.udacity.com/v1/StudentLocation"
         
         case studentLocation
+        case addStudentLocation
         
         var stringValue: String {
             switch self {
                 
             case .studentLocation:
                 return Endpoints.base + "?limit=100&order=-updatedAt"
+            case .addStudentLocation:
+                return Endpoints.base
                 
             }
         }
@@ -51,6 +54,28 @@ class ParseAPIHandler {
         }
         task.resume()
         
+    }
+    
+    class func addStudentLocation(locationString: String, linkString: String, lat: Double, lon: Double, completion: @escaping (Bool, Error?) -> Void){
+        var request = URLRequest(url: Endpoints.addStudentLocation.url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        let body = StudentData(firstName: "Candroid", lastName: "Kitkat", latitude:lat, longitude:lon, mapString: locationString, mediaURL:linkString)
+        request.httpBody = try! JSONEncoder().encode(body)
+        /*request.httpBody = "{\"uniqueKey\": \"1234\", \"firstName\": \"John\", \"lastName\": \"Doe\",\"mapString\": \"Mountain View, CA\", \"mediaURL\": \"https://udacity.com\",\"latitude\": 37.386052, \"longitude\": -122.083851}".data(using: .utf8)*/
+        let session = URLSession.shared
+        let task = session.dataTask(with: request) { data, response, error in
+            if error != nil {
+                //completion(false, error)
+                let descriptiveError = try! JSONDecoder().decode(UdacityResponse.self, from: error as! Data)
+                completion(false, descriptiveError)
+                return
+            }
+            else{
+                completion(true, nil)
+            }
+        }
+        task.resume()
     }
     
 }

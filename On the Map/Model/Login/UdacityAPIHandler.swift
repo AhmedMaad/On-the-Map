@@ -66,6 +66,7 @@ class UdacityAPIHandler {
             do{
                 let returnedData = try JSONDecoder().decode(LoginResponse.self, from: newData!)
                 Auth.sessionId = returnedData.session.id
+                
                 print(returnedData.session.id)
                 completion(true, nil)
             }
