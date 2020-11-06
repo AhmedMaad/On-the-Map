@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreLocation
+import MapKit
 
 class AddLocationViewController: UIViewController {
 
@@ -26,6 +28,21 @@ class AddLocationViewController: UIViewController {
         }
         else{
             //forward written string geocode
+            let geocoder = CLGeocoder()
+            geocoder.geocodeAddressString(locationTextField.text ?? "") { (placemarks, error) in
+                if (placemarks?.count == 0 || error != nil){
+                    self.showAlertDialog(title: "No Address Found", message: "Please write a valid address")
+                }
+                else{
+                    let topResult: CLPlacemark = (placemarks?[0])!
+                    let placemark: MKPlacemark = MKPlacemark(placemark: topResult)
+                    let lat = (placemark.location?.coordinate.latitude)!
+                    let lon = (placemark.location?.coordinate.longitude)!
+                    print("Lat: ", lat)
+                    print("Lon: ", lon)
+                    //Send lat lon to final map view with submit button
+                    }
+            }
         }
         
     }
